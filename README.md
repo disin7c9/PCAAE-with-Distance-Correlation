@@ -39,7 +39,7 @@ Only the modified model assigned the location information of the white ball to a
 
 
 ## Conclusion
-The modified model could recognize non-linear relationships between the prior fixed component in the latent space and later non-fixed component under training. This was demonstrated in both qualitative and quantitative results(refer to the "main.ipynb").
+The modified model could recognize non-linear relationships between the prior fixed component in the latent space and the later non-fixed component under training. This was demonstrated in both qualitative and quantitative results(refer to the "main.ipynb").
 
 Of course, distance correlation is not the only option that is better than Pearson correlation coefficient. There are other powerful coefficients like maximal correlation coefficient[5] or the maximal information coefficient[6]. However, these coefficients are not perfect in all cases.
 
