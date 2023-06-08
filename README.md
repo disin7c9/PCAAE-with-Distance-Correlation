@@ -22,13 +22,16 @@ To solve the first limitation, I applied distance correlation[3] to the regulari
 ## Used Data
 The input images are composed with white ball's angle of polar coordinate(1D, unit: 2pi/72) and brightness of the green center ball(1D, range: [128, 255]). A total of 72 * 128 = 9216 cases. 
 
-![data_1color_and_1circle](https://github.com/disin7c9/PCAAE-with-Distance-Correlation/assets/94789911/6f2e225b-000c-467a-8a10-bf31ef39704e)
+![data_1color_and_1circle](https://github.com/disin7c9/PCAAE-with-Distance-Correlation/assets/94789911/f3ae87e9-43ee-4dc4-9043-e4bd918dd303)
+
 
 **Figure1:** *There are white revolving ball and smaller fixed green ball in the center.*
    
     
 ## Results
-![interpolation_AEs](https://github.com/disin7c9/PCAAE-with-Distance-Correlation/assets/94789911/4672386b-65cc-4a1f-b82d-72e7edbb4879)
+
+![interpolations](https://github.com/disin7c9/PCAAE-with-Distance-Correlation/assets/94789911/5d517d38-70a2-4505-a12d-3f72f77fd9ff)
+
 
 **Figure2:** *Interpolations in the latent space of simple AE, basic PCAAE and PCAAE with distance correlation*
 
