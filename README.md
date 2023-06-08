@@ -1,4 +1,4 @@
-# PCAAE-with-Distance-Correlation
+# PCAAE with Distance Correlation
 Improved PCAAE using distance correlation instead of Pearson correlation
 
 
@@ -10,3 +10,8 @@ However, PCAAE also has limitations.
   1. The original model uses covariance loss as regularization. Since this loss function is theoretically equivalent to Pearson correlation, it does not gaurantees independency between each component of latent space.
   2. PCAAE consists of encoder with several sub-encoders of 1-dimensional output and ordinary decoder. At the k-th step, there are k sub-encoders and 1 new decoder that takes k-dimensional input. Other decoders trained before the k-th step are not used at the k-th step. This training procedure is very time consuming and computational resource intensive.
 
+## Improvement
+To solve the first limitation, I applied distance correlation to the regularization function of the basic model. Unlike Pearson correlation, one of important properties of distance correlation is 
+
+    for scalar random variables X&Y, 
+    dCor(X,Y) = 0 if and only if X&Y are independent.
