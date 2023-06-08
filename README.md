@@ -20,6 +20,8 @@ To solve the first limitation, I applied distance correlation to the regularizat
 Of course, distance correlation is not the only option that is better than Pearson correlation coefficient. There are other effective coefficients like maximal correlation coefficient or maximal information coefficient. However, these coefficients are not perfect in all cases.
 
 Maximal correlation coefficient has some undesirable properties like,
-  1. it is quite harder to compute than Pearson's R.
-  2. the result depends on the smoother of the ACE algorithm like histogram or kernel regression.
+  1. it is quite harder to compute than Pearson's R or distance correlation.
+  2. the result depends on the ACE algorithm's smoother like histogram or kernel regression.
   3. when using the ACE algorithm, there are some cases that for random variables X&Y, even mCor(X,Y)=1 does not implicate perfect determinisic relation between X and Y.
+
+The maximal information coefficient is based on mutual information of information theory. To calculate MI between continuous distributions, samples need to be quantized into an appropriate grid. This method uses dynamic programming to efficiently approximate the normalized true MI value, MIC. It is the most effective but complicate method than others.
