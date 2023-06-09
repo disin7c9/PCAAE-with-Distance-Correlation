@@ -50,7 +50,7 @@ Maximal correlation coefficient has some undesirable properties like,
 
 The maximal information coefficient is based on mutual information of information theory. To calculate MI between continuous distributions, samples need to be quantized into an appropriate grid. This method uses dynamic programming to efficiently approximate the normalized true MI value, MIC. It is the most effective but complicate method than others.
 
-Furthermore, if someone wants to apply maximal correlation or MIC to deep learning, the one need to draw computational graph and find derivatives of backward propagation, even though there are packages for those coefficients in R studio or python. From that point of view, distance correlation is very simple to use. Just write the forward formula, and frameworks like PyTorch or TensorFlow do the calculation for you.
+Furthermore, if someone wants to apply maximal correlation or MIC directly to deep learning, the one need to draw computational graph and find derivatives of backward propagation, even though there are packages for those coefficients in R studio or python. From that point of view, distance correlation is very simple to use. Just write the forward formula, and frameworks like PyTorch or TensorFlow do the calculation for you.
 
 
 ## References
