@@ -13,14 +13,14 @@ However, PCAAE also has limitations.
 
 
 ## Improvement
-To solve the first limitation, I applied distance correlation[3] to the regularization function of the basic model. Unlike Pearson correlation, one of important properties of distance correlation is 
+To solve the first limitation, I applied distance correlation[3] to the regularization function of the model. Unlike Pearson correlation, one of important properties of distance correlation is 
 
     for scalar random variables X&Y, 
     dCor(X,Y) = 0 if and only if X&Y are independent.[4]
  
 
 ## Used Data
-The input images are composed with white ball's angle of polar coordinate(1D, unit: 2pi/72) and brightness of the green center ball(1D, range: [128, 255]). A total of 72 * 128 = 9216 cases. 
+The input images are composed with white ball's angle in polar coordinate(1D, unit: 2pi/72) and brightness of green center ball(1D, range: [128, 255]). A total of 72 * 128 = 9216 cases. 
 
 ![data_1color_and_1circle](https://github.com/disin7c9/PCAAE-with-Distance-Correlation/assets/94789911/f3ae87e9-43ee-4dc4-9043-e4bd918dd303)
 
@@ -35,7 +35,7 @@ The input images are composed with white ball's angle of polar coordinate(1D, un
 
 **Figure2:** *Interpolations in the latent space of simple AE, basic PCAAE and PCAAE with distance correlation*
 
-Only the modified model assigned the location information of the white ball to a single component in the latent space and learned the brightness of green ball.
+Only the modified model assigned the location information of the white ball to a single component in the latent space and learned the brightness of the green ball.
 
 
 ## Conclusion
@@ -48,7 +48,7 @@ Maximal correlation coefficient has some undesirable properties like,
   2. the coefficient output depends on the ACE algorithm's smoother such as histogram or kernel regression.
   3. when using the ACE algorithm, there are some cases that for random variables X&Y, even mCor(X,Y)=1 does not implicate perfect determinisic relation between X and Y.[4]
 
-The maximal information coefficient is based on mutual information of information theory. To calculate MI between continuous distributions, samples need to be quantized into an appropriate grid. This method uses dynamic programming to efficiently approximate the normalized true MI value, MIC. It is the most effective but complicate method than others.
+The maximal information coefficient is based on mutual information of information theory. To calculate MI between continuous distributions, samples need to be quantized into an appropriate grid. This method uses dynamic programming to efficiently approximate the normalized true MI value, MIC. It is the most effective but complicated method than others.
 
 Furthermore, if someone wants to apply maximal correlation or MIC directly to deep learning, the one need to draw computational graph and find derivatives of backward propagation, even though there are packages for those coefficients in R studio or python. From that point of view, distance correlation is very simple to use. Just write the forward formula, and frameworks like PyTorch or TensorFlow do the calculation for you.
 
